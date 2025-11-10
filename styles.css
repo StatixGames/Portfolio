@@ -15,7 +15,7 @@ header{
     padding: 10px 30px;
 }
 
-.logo.img{
+.logo img{
     width: 50px;
 }
 
@@ -42,6 +42,7 @@ header h1{
     padding-left: 30px;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .socials img{
@@ -71,10 +72,11 @@ a:hover{
     width: 100%;
     padding-left: 30px;
     padding-right: 57px;
-    background-image: url(images/icon.png);
+    background-color: moccasin;
+    /*background-image: url(images/icon.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
 }
 
 .home-image{
@@ -83,6 +85,16 @@ a:hover{
     border-radius: 15px;
     border-color:black;
 }
+
+.content p{
+    color:aqua;
+}
+
+.abtMeText{
+    color:#bc5d58;
+    text-decoration: underline;
+}
+
 
 .list-aboutme{
     list-style-type: lower-roman;
@@ -98,4 +110,16 @@ footer{
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 25px;
+}
+
+.project-table{
+
+    margin-top: 10px
+    border-collapse;
+    margine: auto;
+}
+.project-table td, .project-table th{
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
 }
