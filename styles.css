@@ -1,125 +1,56 @@
 *
-{
-
-    margin: 0px; /* property-name: property-value */
-    padding: 0px;
-
+/* General body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #003B2E; /* deep green */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
-
-header{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #003b2e;
-    padding: 10px 30px;
-}
-
-.logo img{
-    width: 50px;
-}
-
-header h1{
-
+/* Header */
+header {
+    background-color: #012A1F; /* darker green for contrast */
+    padding: 1rem;
     text-align: center;
-    color: #387478;
-    flex: 1;
-    font: 50px "Times New Roman";
-    font-weight: 800;
-
 }
 
-
-.nav-bar{
-
-    display: flex;
-    gap: 40px;
-    list-style-type: none;
-
-}
-
-.socials{
-    padding-left: 30px;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.socials img{
-    width: 30px;
-    height: 30px;
-}
-
-.nav-bar a{
-
-    color:#bc5d58;
-
-}
-
-a:link{
-    text-decoration:none;
-}
-
-a:visited{
+nav a {
+    color: #ffffff;
+    margin: 0 1rem;
     text-decoration: none;
 }
 
-a:hover{
+nav a:hover {
     text-decoration: underline;
 }
 
-.content{
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 57px;
-    background-color: moccasin;
-    /*background-image: url(images/icon.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #01B26F; /* lighter green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
 }
 
-.home-image{
-    border-style: dotted;
-    border-width: 2px;
-    border-radius: 15px;
-    border-color:black;
+.button:hover {
+    background-color: #01995A;
 }
 
-.content p{
-    color:aqua;
+/* Main sections */
+main {
+    text-align: center;
+    padding: 2rem;
 }
 
-.abtMeText{
-    color:#bc5d58;
-    text-decoration: underline;
-}
-
-
-.list-aboutme{
-    list-style-type: lower-roman;
-}
-
-footer{
-    width: 100%;
+footer {
+    background-color: #012A1F;
+    text-align: center;
+    padding: 1rem;
     position: fixed;
     bottom: 0;
-    color: #387478;
-    background-color: #1b2324;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 25px;
-}
-
-.project-table{
-
-    margin-top: 10px
-    border-collapse;
-    margine: auto;
-}
-.project-table td, .project-table th{
-    border: 1px solid black;
-    padding: 3px;
-    text-align: center;
+    width: 100%;
 }
