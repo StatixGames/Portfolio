@@ -1,63 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Nicholas Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <title>My Projects</title>
+<header class="top-bar">
+  <a class="home-icon" href="landingpage.html">🏠</a>
+  <h2 class="site-title">Projects</h2>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false">☰</button>
+</header>
 
-        
-    </head>
-        <header>
-            <!--heading tag h1,h2,h3...,h6-->
-            <h1> My Portfolio </h1>
+<nav id="menuPanel" class="menu-panel">
+  <a href="about.html">About Me</a>
+  <a href="certificates.html">Certificates</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="socials.html">Socials</a>
+</nav>
 
-            <!-- use anchor tag for links = <a><li>#####</a></li> -->
-            <ul class="nav-bar">    <!-- unordered list tag -->
-                <li><a herf="index.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>    <!-- list item tag -->
-                <li><a herf="projects.html">Projects</a></li>
-                <li><a herf="contact.html">Contacts</a></li>
-                <li><a herf="socialmedia.html" >Social Media</a></li>
-                <li><a herf="portfolo.html">Portfolio</a></li>
-                <li><a href="hobbies.html">Hobbies</a></li>
-                <li><a href="clubs.html">Clubs</a></li>
-                <li><a href="more.html">More</a></li>
+<main class="content">
+  <section class="card">
+    <h2>Projects</h2>
 
-            </ul>
-            
-        </header>
-        <div vlass="content"></div>
-            <table class="project table">
+    <article class="project">
+      <h3>Project 1</h3>
+      <p>Describe your first project here.</p>
+    </article>
 
-                <tr>
-                    <th>A</th>
-                    <th>B</th>
-                    <th>C</th>
-                </tr>
+    <article class="project">
+      <h3>Project 2</h3>
+      <p>Describe your next project.</p>
+    </article>
 
+  </section>
+</main>
 
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                </tr>
+<script>
+  const btn = document.getElementById('menuBtn');
+  const panel = document.getElementById('menuPanel');
 
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  });
 
-                <tr>
-                    <td>4</td>
-                    <td rowspan="2"></td>
-                    <td>5</td>
-                </tr>
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && e.target !== btn) {
+      panel.style.display = 'none';
+    }
+  });
+</script>
 
-
-                <tr>
-                    <td colspan="2">6</td>
-                    <td>7</td>
-                    <td>img src</td>
-                </tr>
-
-            </table>
-        
-    </body>
-
+</body>
 </html>

@@ -1,33 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home - Nicholas Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Home</h1>
-        <nav>
-            <a href="index.html">Landing</a>
-            <a href="landingpage.html">Landing Page</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="projects">
-            <h2>My Projects</h2>
-            <ul>
-                <li>Project 1</li>
-                <li>Project 2</li>
-                <li>Project 3</li>
-            </ul>
-        </section>
-    </main>
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <a class="home-icon" href="index.html" aria-label="Home">🏠</a>
+    <h2 class="site-title">Nicholas Portfolio</h2>
+    <button class="menu-btn" id="menuBtnHome" aria-expanded="false" aria-controls="menuPanelHome">☰</button>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 Nicholas Cantu</p>
-    </footer>
+  <!-- Click menu for Home -->
+<nav class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+        <a href="about.html">About Me</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="socials.html">Socials</a>
+    </div>
+</nav>
+
+
+
+  <main class="content">
+    <!-- About -->
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>Write a short description about yourself here.</p>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates" class="card">
+      <h2>Certificates</h2>
+      <p>List or images of certificates with links or short notes.</p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <article class="project">
+        <h3>Project 1</h3>
+        <p>Short description. Add images or links as needed.</p>
+      </article>
+      <article class="project">
+        <h3>Project 2</h3>
+        <p>Short description.</p>
+      </article>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Email: example@email.com</p>
+      <p>Socials: @username</p>
+    </section>
+
+    <!-- Socials -->
+    <section id="socials" class="card">
+      <h2>Socials</h2>
+      <p>Links to LinkedIn, GitHub, Instagram etc.</p>
+    </section>
+  </main>
+
+  <script>
+    // Menu toggle for home page
+    (function () {
+      const btn = document.getElementById('menuBtnHome');
+      const panel = document.getElementById('menuPanelHome');
+
+      function toggle() {
+        const isOpen = panel.style.display === 'block';
+        panel.style.display = isOpen ? 'none' : 'block';
+        panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+        btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggle();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!panel.contains(e.target) && e.target !== btn) {
+          panel.style.display = 'none';
+          panel.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
+
+
