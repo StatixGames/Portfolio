@@ -8,63 +8,55 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
   <header class="top-bar">
     <a class="home-icon" href="index.html" aria-label="Home">🏠</a>
     <h2 class="site-title">Nicholas Portfolio</h2>
-
-    <!-- Menu Button (click to toggle) -->
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">☰</button>
+    <button class="menu-btn" aria-expanded="false">☰</button>
   </header>
 
-  <!-- Menu Panel (hidden by default) -->
-<nav id="menuPanel" class="menu-panel" aria-hidden="true">
-  <a href="about.html">About Me</a>
-  <a href="certificates.html">Certificates</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-  <a href="socials.html">Socials</a>
-</nav>
+  <nav class="menu-panel" aria-hidden="true">
+    <a href="about.html">About Me</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-
-  <!-- Main landing content -->
   <main class="landing-content">
     <section class="landing-card">
       <h1>Welcome</h1>
-      <p>This is my portfolio. Use the menu in the top-right to navigate through About, Projects, Certificates, and Contact.</p>
-      <p>Click the menu icon to open navigation.</p>
+      <p>This is my portfolio. Click the menu icon (top-right) to navigate.</p>
     </section>
   </main>
 
   <script>
-    // Toggle menu (click-to-open)
-    (function () {
-      const btn = document.getElementById('menuBtn');
-      const panel = document.getElementById('menuPanel');
+    // Generic click-to-toggle menu for pages
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.querySelector('.menu-btn');
+      const panel = document.querySelector('.menu-panel');
 
-      function toggle() {
+      function toggle(e) {
+        e.stopPropagation();
         const isOpen = panel.style.display === 'block';
         panel.style.display = isOpen ? 'none' : 'block';
         panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
         btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
       }
 
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation(); // prevent immediate document click
-        toggle();
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!panel.contains(e.target) && e.target !== btn) {
-          panel.style.display = 'none';
-          panel.setAttribute('aria-hidden', 'true');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    })();
+      if (btn && panel) {
+        btn.addEventListener('click', toggle);
+        document.addEventListener('click', (ev) => {
+          if (!panel.contains(ev.target) && ev.target !== btn) {
+            panel.style.display = 'none';
+            panel.setAttribute('aria-hidden', 'true');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
   </script>
 
 </body>
 </html>
+
+
 

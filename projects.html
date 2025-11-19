@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects - Nicholas Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="top-bar">
-  <a class="home-icon" href="landingpage.html">🏠</a>
-  <h2 class="site-title">Projects</h2>
-  <button class="menu-btn" id="menuBtn" aria-expanded="false">☰</button>
-</header>
+  <header class="top-bar">
+    <a class="home-icon" href="landingpage.html" aria-label="Home">🏠</a>
+    <h2 class="site-title">Projects</h2>
+    <button class="menu-btn" aria-expanded="false">☰</button>
+  </header>
 
-<nav id="menuPanel" class="menu-panel">
-  <a href="about.html">About Me</a>
-  <a href="certificates.html">Certificates</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-  <a href="socials.html">Socials</a>
-</nav>
+  <nav class="menu-panel" aria-hidden="true">
+    <a href="about.html">About Me</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<main class="content">
-  <section class="card">
-    <h2>Projects</h2>
+  <main class="content">
+    <section class="card">
+      <h2>Projects</h2>
 
-    <article class="project">
-      <h3>Project 1</h3>
-      <p>Describe your first project here.</p>
-    </article>
+      <article class="project">
+        <h3>Project 1 — Echoes of the Fallen</h3>
+        <p>Short description or link.</p>
+      </article>
 
-    <article class="project">
-      <h3>Project 2</h3>
-      <p>Describe your next project.</p>
-    </article>
+      <article class="project">
+        <h3>Project 2</h3>
+        <p>Short description.</p>
+      </article>
 
-  </section>
-</main>
+    </section>
+  </main>
 
-<script>
-  const btn = document.getElementById('menuBtn');
-  const panel = document.getElementById('menuPanel');
-
-  btn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!panel.contains(e.target) && e.target !== btn) {
-      panel.style.display = 'none';
-    }
-  });
-</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.querySelector('.menu-btn');
+      const panel = document.querySelector('.menu-panel');
+      if (!btn || !panel) return;
+      btn.addEventListener('click', (e) => { e.stopPropagation(); panel.style.display = panel.style.display === 'block' ? 'none' : 'block'; });
+      document.addEventListener('click', (ev) => { if (!panel.contains(ev.target) && ev.target !== btn) panel.style.display = 'none'; });
+    });
+  </script>
 
 </body>
 </html>
+
+
