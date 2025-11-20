@@ -10,26 +10,51 @@
 
     <body> 
 
-        <header>
-            <!--heading tag h1,h2,h3...,h6-->
-            <h1> My Portfolio </h1>
+  <header class="top-bar">
+    <a class="home-icon" href="index.html" aria-label="Home">
+      <img src="images/icon.png" alt="Home" class="house-outline" style="height:28px;width:28px;vertical-align:middle;">
+    </a>
+    <h2 class="site-title">Nicholas Portfolio</h2>
+    <button class="menu-btn" aria-expanded="false">☰</button>
+  </header>
 
-            <!-- use anchor tag for links = <a><li>#####</a></li> -->
-            <ul class="nav-bar">    <!-- unordered list tag -->
-                <li><a herf="index.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>    <!-- list item tag -->
-                <li><a herf="projects.html">Projects</a></li>
-                <li><a herf="contact.html">Contacts</a></li>
-                <li><a herf="socialmedia.html" >Social Media</a></li>
-                <li><a herf="portfolo.html">Portfolio</a></li>
-                <li><a href="hobbies.html">Hobbies</a></li>
-                <li><a href="clubs.html">Clubs</a></li>
-                <li><a href="more.html">More</a></li>
-
-            </ul>
-            
-        </header>
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-header">
+      <span>home</span>
+      <button class="close-menu" id="closeMenu">✖</button>
+    </div>
+    <div class="menu-options">
+      <div class="options-list">
+        <button onclick="window.location.href='projects.html'">Projects</button>
+        <button onclick="window.location.href='hobbies.html'">Hobbies</button>
+        <button onclick="window.location.href='contact.html'">Contact</button>
+        <button onclick="window.location.href='about.html'">About Me</button>
+        <button onclick="window.location.href='certificates.html'">Certificates</button>
+        <button onclick="window.location.href='more.html'">More</button>
+      </div>
+    </div>
+  </div>
         
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.querySelector('.menu-btn');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const closeMenu = document.getElementById('closeMenu');
+      menuBtn.addEventListener('click', function () {
+        menuOverlay.style.display = 'block';
+      });
+      closeMenu.addEventListener('click', function () {
+        menuOverlay.style.display = 'none';
+      });
+      document.addEventListener('click', function (ev) {
+        if (menuOverlay.style.display === 'block' && !menuOverlay.contains(ev.target) && ev.target !== menuBtn) {
+          menuOverlay.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
     </body>
 
 </html>

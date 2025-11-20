@@ -54,24 +54,27 @@
   cursor: pointer;
 }
 .menu-options {
+  height: calc(85vh - 80px);
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 32px;
 }
 .options-list {
-  display: flex;
-  flex-direction: column;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
   gap: 18px;
 }
 .options-list button {
+  
   background: #01b26f;
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 12px 28px;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  padding: 40px 28px;
+  font-size: 1.5rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(1,178,111,0.10);
 }
