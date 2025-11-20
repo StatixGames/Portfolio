@@ -9,33 +9,69 @@
 <body>
 
   <header class="top-bar">
-    <a class="home-icon" href="index.html" aria-label="Home">🏠</a>
+    <a class="home-icon" href="index.html" aria-label="Home">
+      <img src="images/icon.png" alt="Home" class="house-outline" style="height:28px;width:28px;vertical-align:middle;">
+    </a>
     <h2 class="site-title">Nicholas Portfolio</h2>
     <button class="menu-btn" aria-expanded="false">☰</button>
   </header>
 
-  <nav class="menu-panel" aria-hidden="true">
-    <a href="about.html">About Me</a>
-    <a href="certificates.html">Certificates</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-header">
+      <span>home</span>
+      <button class="close-menu" id="closeMenu">✖</button>
+    </div>
+    <div class="menu-options">
+      <div class="options-list">
+        <button onclick="window.location.href='projects.html'">Projects</button>
+        <button onclick="window.location.href='hobbies.html'">Hobbies</button>
+        <button onclick="window.location.href='contact.html'">Contact</button>
+        <button onclick="window.location.href='about.html'">About Me</button>
+        <button onclick="window.location.href='certificates.html'">Certificates</button>
+        <button onclick="window.location.href='more.html'">More</button>
+      </div>
+    </div>
+  </div>
 
-  <main class="content">
-    <section class="card">
-      <h2>Portfolio Overview</h2>
-      <p>Short intro and highlight of top projects.</p>
+  <main class="scroll-content">
+    <section id="about" class="section-card">
+      <h2>About Me</h2>
+      <p>Short bio and background info.</p>
+    </section>
+    <section id="contact" class="section-card">
+      <h2>Contact</h2>
+      <p>Email, social media, and contact form.</p>
+    </section>
+    <section id="hobbies" class="section-card">
+      <h2>Hobbies</h2>
+      <p>My favorite activities and interests.</p>
+    </section>
+    <section id="projects" class="section-card">
+      <h2>Projects</h2>
+      <p>Featured work and portfolio projects.</p>
+    </section>
+    <section id="more" class="section-card">
+      <h2>More</h2>
+      <p>Additional info and links.</p>
     </section>
   </main>
 
   <script>
-    // same toggle script used on landingpage — isolated to page
     document.addEventListener('DOMContentLoaded', function () {
-      const btn = document.querySelector('.menu-btn');
-      const panel = document.querySelector('.menu-panel');
-      if (!btn || !panel) return;
-      btn.addEventListener('click', (e) => { e.stopPropagation(); panel.style.display = panel.style.display === 'block' ? 'none' : 'block'; });
-      document.addEventListener('click', (ev) => { if (!panel.contains(ev.target) && ev.target !== btn) panel.style.display = 'none'; });
+      const menuBtn = document.querySelector('.menu-btn');
+      const menuOverlay = document.getElementById('menuOverlay');
+      const closeMenu = document.getElementById('closeMenu');
+      menuBtn.addEventListener('click', function () {
+        menuOverlay.style.display = 'block';
+      });
+      closeMenu.addEventListener('click', function () {
+        menuOverlay.style.display = 'none';
+      });
+      document.addEventListener('click', function (ev) {
+        if (menuOverlay.style.display === 'block' && !menuOverlay.contains(ev.target) && ev.target !== menuBtn) {
+          menuOverlay.style.display = 'none';
+        }
+      });
     });
   </script>
 

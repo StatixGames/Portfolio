@@ -14,6 +14,13 @@
     <button class="menu-btn" aria-expanded="false">☰</button>
   </header>
 
+
+
+
+
+
+
+
   <nav class="menu-panel" aria-hidden="true">
     <a href="about.html">About Me</a>
     <a href="certificates.html">Certificates</a>
@@ -24,8 +31,7 @@
   <main class="content">
     <section class="card">
       <h2>Contact</h2>
-      <p>Email: you@example.com</p>
-      <p>Phone: 123-456-7890</p>
+      <p>Email: Nicholascantu711@gmail.com</p>
 
       <div class="social">
         <a href="https://github.com/StatixGames" target="_blank" rel="noopener">
@@ -49,8 +55,39 @@
     });
   </script>
 
+
+        <div class="content">
+            <form name="contactMe" onsubmit="return validateForm();">
+                <fieldset>
+                    <legend>Contact Me</legend>
+                    <label>Name:</label>
+                    <input name="name" type="text"><br/>
+
+                    <label>Email:</label>
+                    <input name="email" type="email"><br/>
+
+                    <label>Phone:</label>
+                    <input name="phone" type="tel"><br/>
+
+                    <label>Message:</label>
+                    <textarea name="msg" rows="4" cols="50"></textarea><br/>
+
+                    <label></label>
+                    <input type="submit" value="Send Message!">
+                </fieldset>
+            </form>
+        </div>
+
+        <footer>
+            Copyright &copy; CSCI 1101
+        </footer>
+    </body>
+</html>
+
+
 </body>
 </html>
+
 
 
 
